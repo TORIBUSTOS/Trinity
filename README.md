@@ -22,7 +22,7 @@ Refundación integrada de TORO Holdings + SANARTE sistemas.
 | Director | Tori (Rodrigo Bustos) | Visión estratégica |
 | Product Architect | Rosario (ChatGPT) | Genera bloques negros (VISION.md) |
 | CTO / Execution Engine | Claude | Arquitectura, código, decisiones técnicas, memoria Trinity |
-| Heavy Execution | Google Antigravity | Implementaciones intensivas, agentes paralelos |
+| Heavy Execution | AG (Google Antigravity) | Implementaciones intensivas, agentes paralelos |
 | Validator | Gemini | Validación cruzada |
 
 ## 🚀 Cómo empezar

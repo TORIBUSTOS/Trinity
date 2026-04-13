@@ -56,7 +56,7 @@ TORO Prime existe para no repetir esto.
 | **Tori** | Director General — visión, decisiones finales | Humano |
 | **Rosario** | Especificación — VISION.md + ARCHITECTURE.md | Humano |
 | **Claude** | Ejecución primaria — MISSION.md, SPECS.md, código, memoria | IDE agéntico (Anthropic) |
-| **Google Antigravity** | Ejecución pesada — tareas complejas, agentes paralelos, implementación intensiva | IDE agéntico (Google) |
+| **AG (Google Antigravity)** | Ejecución pesada — tareas complejas, agentes paralelos, implementación intensiva | IDE agéntico (Google) |
 | **Gemini** | Validación técnica — revisión independiente de entregables | LLM (Google) |
 
 ---
@@ -67,17 +67,17 @@ TORO Prime existe para no repetir esto.
 Tori (Visión)
   → Rosario (VISION.md + ARCHITECTURE.md)
     → Claude  ──────────────────────────────┐
-    → Antigravity (ejecución pesada/paralela)│  (MISSION.md + SPECS.md + Código)
+    → AG (ejecución pesada/paralela)│  (MISSION.md + SPECS.md + Código)
       ←──────────────────────────────────────┘
         → Gemini (Validación técnica)
           → Tori (Aprobación final)
             → Deploy
 ```
 
-**Regla de uso Claude vs Antigravity:**
+**Regla de uso Claude vs AG:**
 - **Claude:** memoria del proyecto (Trinity), specs, código incremental, decisiones de arquitectura
-- **Antigravity:** implementaciones intensivas, múltiples agentes en paralelo, tareas que requieren cómputo prolongado
+- **AG:** implementaciones intensivas, múltiples agentes en paralelo, tareas que requieren cómputo prolongado
 
 ---
 
-*Versión 1.1 — Abril 2026 — Agrega Google Antigravity como actor operativo*
+*Versión 1.1 — Abril 2026 — Agrega AG (Google Antigravity) como actor operativo*
