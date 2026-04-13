@@ -1,0 +1,9 @@
+# TORO PRIME - Code Owners
+# Tori tiene ownership de todo
+* @toribustos
+
+# Trinity files requieren review de Tori
+/trinity/ @toribustos
+
+# Constitución es inmutable sin aprobación de Tori
+CONSTITUCION_OPERATIVA.md @toribustos

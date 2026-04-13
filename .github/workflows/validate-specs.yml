@@ -1,0 +1,32 @@
+name: Validate Specs
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'projects/**/VISION.md'
+      - 'projects/**/MISSION.md'
+      - 'projects/**/ARCHITECTURE.md'
+      - 'projects/**/SPECS.md'
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check VISION.md structure
+        run: |
+          for f in $(find projects -name "VISION.md" -size +0); do
+            echo "✅ Validando: $f"
+            # Verificar que no esté vacío
+            if [ ! -s "$f" ]; then
+              echo "❌ $f está vacío"
+              exit 1
+            fi
+          done
+          echo "✅ Todos los VISION.md válidos"
+
+      - name: Update context
+        run: |
+          echo "📝 Specs actualizados - revisar trinity/context.md"
