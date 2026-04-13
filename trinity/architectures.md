@@ -22,6 +22,15 @@ Deploy:    GitHub Actions → Vercel (web) / PyInstaller (desktop)
 Monitoreo: TBD
 ```
 
+## IDEs Agénticos
+
+| Herramienta | Uso |
+|-------------|-----|
+| **Claude Code** | Ejecución primaria, memoria Trinity, specs, código incremental |
+| **Google Antigravity** | Ejecución pesada, agentes paralelos, implementaciones intensivas |
+
+Ambos operan sobre el mismo repo Git. Antigravity se activa cuando la tarea requiere múltiples agentes simultáneos o cómputo prolongado.
+
 ## Integración entre sistemas
 
 ```
