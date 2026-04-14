@@ -8,6 +8,7 @@
 ## TAUROS PRIME — Control de Gestión Financiera
 
 - **Estado:** Producción-Ready Beta ✅
+- **Repo:** https://github.com/TORIBUSTOS/tauros-prime (privado)
 - **Ruta local:** `C:\Users\mauri\OneDrive\Escritorio\TORO\_TORO _HOLDING_\55 - Proyectos-TORO v2\2_TAUROS_v2`
 - **Sprint actual:** Sprint 4 — Inteligencia y Perfeccionamiento (iniciando)
 - **Sprint anterior:** Sprint 3 — COMPLETO ✅
@@ -59,5 +60,6 @@
 ## Blockers Activos
 _Ninguno registrado_
 
-## Decisiones Pendientes
-- Definir si TAUROS v2 existente migra al repo Trinity o mantiene repo separado
+## Decisiones Tomadas
+- TAUROS tiene repo propio: github.com/TORIBUSTOS/tauros-prime (no vive en Trinity)
+- Cada sistema Prime tendrá su propio repo de código; Trinity = docs y coordinación
