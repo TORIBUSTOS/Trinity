@@ -11,6 +11,7 @@ Refundación integrada de TORO Holdings + SANARTE sistemas.
 ## 🗂️ Estructura
 
 - `projects/` - Sistemas Prime (TAUROS, MOIRAS, ARGOS, MINOS, OIKOS)
+- `skills/` - Skills de ingeniería adaptadas para Trinity ([ver pack](skills/TRINITY_SKILLS_PACK_v1.md))
 - `trinity/` - Memory files + decisiones
 - `integration/` - APIs + data flows
 - `.github/workflows/` - CI/CD automático
