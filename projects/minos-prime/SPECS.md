@@ -343,3 +343,109 @@ Esta funcionalidad permite:
 - la señal por ticker debe definirse por lógica central (no por cartera individual);
 - la vista unificada no reemplaza la vista patrimonial ni la vista por cartera;
 - ambas deben coexistir como capas complementarias del sistema.
+
+## 15. Motor de decisión patrimonial
+
+MINOS PRIME no debe limitarse a analizar activos individuales. Debe interpretar el estado de la cartera en su conjunto y generar soporte a la decisión a nivel patrimonial.
+
+### 15.1 Objetivo
+
+Transformar información consolidada en decisiones accionables sobre la cartera del usuario.
+
+### 15.2 Inputs
+
+- composición de la cartera
+- distribución por activo
+- distribución por moneda
+- presencia de activos en múltiples carteras
+- estado de cada ticker (BUY / HOLD / SELL)
+- cambios recientes
+
+### 15.3 Evaluaciones
+
+El sistema debe analizar:
+
+- concentración por activo
+- concentración por sector (si aplica)
+- exposición por moneda
+- capital inmovilizado
+- duplicación entre carteras
+- balance entre riesgo y liquidez
+- coherencia general del portafolio
+
+### 15.4 Output
+
+MINOS debe devolver:
+
+1. Estado general de la cartera:
+   - EXPANSIÓN
+   - NEUTRAL
+   - RIESGO
+
+2. Insights:
+   - observaciones claras (2 a 4 puntos)
+
+3. Acción sugerida:
+   - ejemplo: reducir exposición
+   - ejemplo: no agregar riesgo
+   - ejemplo: rotar capital
+
+### 15.5 Principio
+
+MINOS no recomienda activos en abstracto.  
+Recomienda acciones sobre la cartera real del usuario.
+
+### 15.6 Relación con ARGOS
+
+- ARGOS provee señales por activo
+- MINOS usa esas señales para tomar decisiones patrimoniales
+- MINOS debe poder funcionar sin ARGOS mediante reglas internas
+
+## 16. Motor de oportunidades y reasignación de capital
+
+MINOS PRIME no debe limitarse a señalar activos débiles o posiciones en estado SELL. Debe también asistir en la decisión sobre qué hacer con el capital disponible o potencialmente liberado.
+
+### 16.1 Objetivo
+
+Evitar que la cartera derive en liquidez ociosa por falta de criterio de reasignación.
+
+### 16.2 Disparadores
+
+Este módulo debe activarse cuando exista alguna de estas condiciones:
+
+- activos en estado SELL;
+- posiciones candidatas a reducción;
+- exceso de liquidez;
+- capital sin asignación clara;
+- oportunidades relevantes detectadas dentro o fuera de la cartera actual.
+
+### 16.3 Función
+
+MINOS debe evaluar posibles destinos del capital y proponer alternativas razonables, incluyendo:
+
+- reforzar posiciones existentes con buena señal;
+- rotar hacia activos más sólidos;
+- mantener liquidez táctica cuando no existan oportunidades claras;
+- sugerir incorporación de nuevos activos si corresponde.
+
+### 16.4 Principio
+
+MINOS no debe recomendar vender sin ofrecer contexto de reasignación.
+
+La decisión patrimonial completa requiere contemplar tanto la salida de capital como su posible destino.
+
+### 16.5 Resultado esperado
+
+El sistema debe poder devolver:
+
+- capital potencialmente liberable;
+- nivel actual de liquidez;
+- nivel estimado de liquidez posterior;
+- oportunidades prioritarias;
+- acción sugerida sobre ese capital.
+
+### 16.6 Relación con el sistema de señal
+
+- el estado BUY / HOLD / SELL ayuda a detectar salidas o refuerzos;
+- la capa de oportunidades patrimoniales define posibles usos del capital;
+- el objetivo es equilibrar defensa, liquidez y crecimiento.
