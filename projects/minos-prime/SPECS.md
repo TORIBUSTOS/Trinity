@@ -1,25 +1,253 @@
-## 14. Consolidación por cartera y unificación de tickers
+# MINOS PRIME — SPECS
 
-MINOS PRIME debe permitir la coexistencia de múltiples carteras patrimoniales dentro de una misma fuente o plataforma, manteniendo separación operativa y claridad estructural.
+## 1. Contexto
 
-### 14.1 Modelo de carteras
+MINOS PRIME representa la evolución de una base previa orientada al diagnóstico por activo hacia un sistema de consolidación patrimonial multi-fuente con capa de inteligencia.
 
-Cada fuente puede contener una o más carteras independientes.
+La versión anterior resolvía análisis por activo. MINOS PRIME amplía ese alcance hacia una visión patrimonial completa, integrando información dispersa y transformándola en una base operativa para control y decisión.
 
-Ejemplos:
+---
+
+## 2. Objetivo del sistema
+
+MINOS PRIME debe consolidar patrimonio, no solo listar activos.
+
+Debe permitir responder:
+- qué patrimonio existe;
+- dónde está;
+- cómo se distribuye;
+- cómo evoluciona;
+- qué decisiones requieren atención.
+
+---
+
+## 3. Alcance del MVP
+
+Incluye:
+- consolidación multi-fuente;
+- carga manual y por archivo;
+- soporte de capturas;
+- validación antes de guardar;
+- normalización básica;
+- lectura patrimonial consolidada;
+- capa inicial de inteligencia;
+- perfiles de captura.
+
+No incluye:
+- automatización total;
+- soporte universal de plataformas;
+- interpretación perfecta de cualquier imagen;
+- ejecución automática.
+
+---
+
+## 4. Fuentes de datos
+
+### 4.1 Estructuradas
+- APIs
+- CSV / Excel
+- exports
+- registros manuales
+
+### 4.2 Visuales
+- capturas
+- tickets
+- balances
+- resúmenes
+
+### 4.3 Principio
+Estructurado = base  
+Visual = complemento operativo
+
+---
+
+## 5. Modelo de consolidación
+
+### 5.1 Unidades
+- activos
+- posiciones
+- saldos
+- cuentas
+- plataformas
+- moneda
+
+### 5.2 Resultado
+Vista patrimonial total con:
+- distribución
+- exposición
+- evolución
+
+### 5.3 Normalización
+- nombres de activos
+- tickers
+- moneda
+- duplicados
+- trazabilidad
+
+---
+
+## 6. Capa de inteligencia
+
+Debe:
+- detectar concentración
+- exposición por moneda
+- inconsistencias
+- cambios
+- alertas
+- estado general
+
+Basado en:
+- reglas
+- métricas
+- comparaciones
+
+---
+
+## 7. Captura visual
+
+### Flujo
+1. subir imagen
+2. interpretar
+3. proponer datos
+4. validar
+5. guardar
+
+Nunca guardar automático sin validación.
+
+---
+
+## 8. Perfiles de captura / templates
+
+### Función
+Reutilizar formatos visuales conocidos.
+
+### Flujo
+- primera vez → guardar template
+- siguientes → reconocer y aplicar
+
+### Objetivo
+- velocidad
+- precisión
+- menor costo
+
+---
+
+## 9. Validación y trazabilidad
+
+Cada dato debe tener:
+- fuente
+- tipo
+- fecha
+- validación
+
+Tipos:
+- API
+- archivo
+- manual
+- captura
+
+---
+
+## 10. Outputs
+
+- patrimonio total
+- distribución
+- exposición
+- posiciones
+- alertas
+- estado general
+
+---
+
+## 11. Límites del MVP
+
+- no cubrir todo
+- no automatizar todo
+- no predicción avanzada
+- no contabilidad completa
+
+---
+
+## 12. Éxito v1
+
+- consolidación real
+- baja fricción
+- claridad patrimonial
+- base escalable
+
+---
+
+## 13. Consolidación por cartera y unificación de tickers
+
+### 13.1 Modelo de carteras
+
+MINOS debe permitir múltiples carteras dentro de una misma fuente.
+
+Ejemplo:
 - Balanz | Cartera 1
 - Balanz | Cartera 2
-- Bull Market | Cartera principal
-- Binance | Cartera cripto
 
-Cada cartera debe:
-- mantener su propio conjunto de activos;
-- permitir nombre editable;
-- conservar su estructura de posiciones, saldos y composición;
-- ser visualizada de forma independiente.
+Cada cartera:
+- es independiente
+- tiene nombre editable
+- mantiene sus posiciones
 
-El sistema no debe asumir un único contenedor por plataforma.
+---
 
+### 13.2 Vista consolidada
+
+Permite:
+- suma patrimonial
+- distribución total
+- exposición
+
+---
+
+### 13.3 Vista unificada de tickers
+
+No suma nominales.  
+Unifica activos.
+
+Ejemplo:
+
+- Balanz 1 → MELI 10  
+- Balanz 2 → MELI 2  
+
+Resultado:
+
+- MELI  
+- presente en 2 carteras  
+- estado: BUY  
+
+---
+
+### 13.4 Tabla sugerida
+
+| Ticker | Presente en | Cartera(s) | Estado |
+|--------|------------|-----------|--------|
+| MELI   | 2          | Balanz 1, Balanz 2 | BUY |
+| NVDA   | 1          | Balanz 1 | HOLD |
+
+---
+
+### 13.5 Separación clave
+
+A. Datos por cartera  
+B. Lectura unificada por ticker  
+
+---
+
+### 13.6 Propósito
+
+- simplificar lectura
+- evitar duplicaciones
+- facilitar decisiones
+
+---
+
+## 14. Definición final
+
+MINOS PRIME consolida patrimonio, integra múltiples fuentes y transforma información dispersa en una base clara para decidir.
 ---
 
 ### 14.2 Vista consolidada patrimonial
