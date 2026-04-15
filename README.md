@@ -28,10 +28,15 @@ Refundación integrada de TORO Holdings + SANARTE sistemas.
 
 ## 🚀 Cómo empezar
 
-1. Lee `CONSTITUCION_OPERATIVA.md`
-2. Lee `docs/QUICKSTART.md`
-3. Crea rama: `git checkout -b tu-nombre/proyecto-vision`
-4. Contribuye siguiendo el flujo de gates
+**Cada agente lee SU documento de onboarding:**
+
+| Agente | Documento | Qué encontrás |
+|--------|-----------|----------------|
+| Rosario | [TO_ROSARIO.md](TO_ROSARIO.md) | Tu flujo, qué skills leer, formato de VISION.md |
+| Claude | [TO_CLAUDE.md](TO_CLAUDE.md) | Tu flujo, qué skills leer, qué validás, qué mantenés |
+| Gemini/AG | [TO_GEMINI.md](TO_GEMINI.md) | Tu flujo, qué BN ejecutás, cómo debuggear |
+
+Cada documento tiene pasos numerados en orden. Seguilo de arriba a abajo y al final sabés exactamente qué hacer.
 
 ## 📐 Stack Base
 
