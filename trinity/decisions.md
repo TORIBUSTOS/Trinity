@@ -27,3 +27,31 @@
 - **Razón:** Lección directa del fracaso de HILE (código sin specs = rework infinito)
 
 ---
+
+## 2026-04-30
+
+### DEC-004: MINOS Broker-Grade Valuation Core
+- **Decidido por:** Tori + Rosario
+- **Problema:** MINOS presentaba valuaciones inconsistentes contra broker (Balanz) y mostraba menos información financiera relevante.
+- **Diagnóstico:** Uso incorrecto de tickers (ADR vs BYMA), ambigüedad de instrumento, pricing no trazable y modelo financiero incompleto.
+- **Decisión:** Reordenar prioridades del sistema.
+
+Nuevo orden:
+
+1. Verdad financiera (valuación correcta)
+2. Visualización (tabla tipo broker)
+3. Inteligencia (señales BUY/HOLD/SELL)
+
+- **Arquitectura adoptada:**
+
+```text
+Position -> Instrument -> PricingEngine -> Quote -> ValuationEngine -> Portfolio
+```
+
+- **Regla crítica:** Ninguna señal es válida si `valuation_status != OK`.
+- **Regla de pricing:** No usar tickers ambiguos. BYMA debe resolverse explícitamente (ej: BMA.BA, YPFD.BA).
+- **Regla de fallback:** Prohibido usar `price = 0` como fallback silencioso.
+
+- **Consecuencia:** Sprint 2 se dedica exclusivamente a lograr paridad con broker antes de cualquier mejora de inteligencia.
+
+---
